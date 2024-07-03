@@ -12,4 +12,8 @@ pub struct Counter {
 impl Counter {
     // semilla para la PDA
     pub const COUNTER_SEED: &'static str = "counter";
+
+    pub fn increment(&mut self) {
+        self.count += 1;
+    }
 }

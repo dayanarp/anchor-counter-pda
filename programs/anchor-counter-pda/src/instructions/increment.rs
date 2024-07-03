@@ -1,7 +1,6 @@
 use anchor_lang::prelude::*;
 use crate::collections::Counter; // import del módulo Counter
 
-
 #[derive(Accounts)]
 pub struct IncrementCounter<'info> {
     authority: Signer<'info>, // autoridad del counter
@@ -19,6 +18,7 @@ pub struct IncrementCounter<'info> {
 
 // acción que se ejecutará al llamar la instrucción increment_counter 
 pub fn increment_counter(ctx: Context<IncrementCounter>) -> Result<()>{
-    ctx.accounts.counter.count += 1; // incrementamos count en 1
+    //ctx.accounts.counter.count += 1; // incrementamos count en 1
+    ctx.accounts.counter.increment();
     Ok(())
 }
